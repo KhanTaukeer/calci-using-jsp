@@ -1,0 +1,77 @@
+<%-- 
+    Document   : calci
+    Created on : 2 May, 2019, 2:28:45 PM
+    Author     : Khansaheb
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        
+        <form>
+            Enter first no: <input type="text" name="n1">
+            Enter Second no: <input type="text" name="n2">
+            
+            <input type="submit" name="+" value="ADD">
+            <input type="submit" name="-" value="SUB">
+            <input type="submit" name="*" value="MUL">
+            <input type="submit" name="/" value="DIV">
+            
+            <%
+try 
+{
+    int c=0;
+    int i1=Integer.parseInt(request.getParameter("n1"));
+    int i2=Integer.parseInt(request.getParameter("n2"));
+    if(request.getParameter("+")!=null)
+    {
+    c=i1+i2;
+    }
+   else if(request.getParameter("-")!=null)
+    {
+    c=i1-i2;
+    }
+   else if(request.getParameter("*")!=null)
+    {
+    c=i1*i2;
+    }
+   else if(request.getParameter("/")!=null)
+    {
+    c=i1/i2;
+    }
+    
+    
+    out.println("result is : "+ c);
+    
+    
+    
+    
+    
+}   
+catch(Exception e)
+{}            
+            
+ %>           
+            
+            
+            
+            
+            
+            
+            
+            
+        </form>
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>
